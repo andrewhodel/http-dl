@@ -1,0 +1,27 @@
+http-dl - a never-fail http downloader
+
+# ABOUT
+
+When living in various places on the globe with poor Internet connections I grew tired of wget, curl and other http downloaders constantly requiring a manual restart of the program due to various network conditions.
+
+I built this to never fail no matter the situation, as long as the server supports Range requests it will get your file.
+
+# COMPILING
+
+Build with gcc <5.0 or use C89 with your compiler.  C99 at least with clang doesn't work with gethostbyname, one day I'll add getaddrinfo and gai_strerror.
+	gcc -o http-dl http-dl.c
+
+# USAGE
+
+Just run the program with the url:
+	./http-dl http://server/filename
+	./http-dl http://server:port/filename
+
+# TODO
+
+Add https support.
+
+# LICENSE
+
+MIT
+
